@@ -1,0 +1,13 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  window.location.origin = window.location.origin ||
+    (window.location.protocol + '//' + window.location.hostname + ':' + window.location.port);
+  var socket = io.connect(window.location.origin);
+  socket.on('content', function (content) {
+    document.body.innerHTML = content;
+    if (typeof(MathJax) != 'undefined') {
+      MathJax.Hub.queue.Push(['Typeset', MathJax.Hub]);
+    }
+    socket.emit('next');
+  });
+</script>

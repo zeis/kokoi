@@ -1,0 +1,33 @@
+{
+  "name": "kokoi",
+  "version": "0.1.0",
+  "description": "Markup file previewer/converter",
+  "bin": {
+    "kokoi": "./bin/kokoi.js"
+  },
+  "main": "./lib/kokoi.js",
+  "dependencies": {
+    "send": "~0.1.4",
+    "socket.io": "~0.9.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeis/kokoi.git"
+  },
+  "keywords": [
+    "preview",
+    "convert",
+    "markup",
+    "markdown",
+    "textile",
+    "restructuredtext",
+    "mathjax",
+    "html"
+  ],
+  "author": "Alessandro Di Martino <aledimax@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeis/kokoi/issues"
+  },
+  "preferGlobal": true
+}
