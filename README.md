@@ -1,16 +1,20 @@
-# kokoi
+# kokoi [![NPM version](https://badge.fury.io/js/kokoi.png)](http://badge.fury.io/js/kokoi)
 
-_kokoi_ is a command line utility that watches markup files for changes (Markdown, Textile, reStructuredText...), and automatically recompiles and previews them directly in the browser each time you save them with your text editor. Rendered HTML is optionally saved.
+_kokoi_ watches for changes on the markup files (Markdown, Textile, reStructuredText...) in the directory _kokoi_ is started, and if they change, automatically reprocesses and previews them directly in the browser. You will work on your files without having to leave your favorite text editor!
 
-You can pass multiple markup files as arguments or directories (which will be scanned recursively) containing markup files. If no file or directory is specified, _kokoi_ watches for changes on all the markup files within the current directory.
+The rendered HTML is optionally saved. _kokoi_ is the perfect tool for those who like to keep notes in markup-formatted files and who are always editing them.
 
-Additional features are, support for math formulas (rendered with MathJax), and support for custom templates.
+You can also pass, as arguments, multiple markup files, or directories, which will be scanned recursively.
+
+Additional features are, configurable command to process markup files, support for math formulas (rendered with MathJax), and support for custom HTML templates.
 
 ## Installation
 
-* First, install a markup converter such as [pandoc](http://johnmacfarlane.net/pandoc/). By default _kokoi_ is configured to watch for changes on Markdown files, and uses _pandoc_ to convert them. If you want to use a different converter, the appropriate command to convert markup files to HTML must be specified (see Usage).
+* Install [Node.js](http://www.nodejs.org/).
 
-* Then, `npm install kokoi -g` to install _kokoi_ via [npm](http://npmjs.org/).
+* Install a markup processing engine such as [Pandoc](http://johnmacfarlane.net/pandoc/). By default _kokoi_ is configured to watch for changes on Markdown files, and uses _pandoc_ to convert them, if _pandoc_ is not installed _kokoi_ will try to use the fallback command `markdown`. If you want to use a different engine, the appropriate command to convert markup files to HTML must be specified (see Usage).
+
+* Then, run `npm install kokoi -g` in a terminal.
 
 ## Usage
 
@@ -21,7 +25,7 @@ USAGE
 
   Examples:
 
-    kokoi -c "redcarpet --smarty" -s "My Notes" test/Foo.md
+    kokoi -c "redcarpet --smarty" -s "My Notes" Dir2 test/Foo.md
     kokoi -e rst -c "pandoc -f rst -t html5" foo.rst
 
   If no file or directory is specified, the current directory (.)
@@ -38,11 +42,13 @@ OPTIONS
       Default is "pandoc -f markdown -t -html5".
 
   -s, --save
-      Save rendered HTML. The output directory for each HTML file
-      is the same of the corresponding markup file.
+      Save the rendered HTML. The output directory for each HTML
+      file is the same of the corresponding markup file.
 
   -m, --mathjax
       Insert a link to the MathJax CDN to render math formulas.
+      If the processing engine does not support math formulas
+      do not use this option.
 
   -e, --extensions
       Comma-delimited list of extensions of the files to watch
@@ -62,7 +68,7 @@ OPTIONS
 
 ## Templates
 
-Templates are custom HTML files to use as a container for the compiled HTML.
+Templates are custom HTML files to use as a container for the processed HTML.
 
 A template file must not contain links to external resources such as images, style sheets or scripts, they must be embedded in the template itself, or alternatively hosted online.
 
