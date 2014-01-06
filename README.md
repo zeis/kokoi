@@ -16,6 +16,9 @@ Additional features are, configurable command to process markup files, support f
 
 * Then, run `npm install kokoi -g` in a terminal.
 
+__On Linux__, make sure that also _npm_ is installed, and note that the preceding command must be run as root.
+Moreover, if you installed Node.js from a package manager, the Node.js binary may be called _nodejs_ instead of _node_, run this command as root `ln -s /usr/bin/nodejs /usr/bin/node` to create a symlink.
+
 ## Usage
 
 ```
@@ -30,6 +33,9 @@ USAGE
 
   If no file or directory is specified, the current directory (.)
   is assumed. Directories are scanned recursively.
+  Subdirectories whose name is "node_modules" or "AppData" or starts
+  with a dot (.git, .hg...) are ignored.
+
 
 OPTIONS
 
