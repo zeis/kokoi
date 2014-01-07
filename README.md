@@ -2,7 +2,7 @@
 
 _kokoi_ watches for changes on the markup files (Markdown, Textile, reStructuredText...) in the directory _kokoi_ is started, and if they change, automatically reprocesses and previews them directly in the browser. You will work on your files without having to leave your favorite text editor!
 
-The rendered HTML is optionally saved. _kokoi_ is the perfect tool for those who like to keep notes in markup-formatted files and who are always editing them.
+The rendered HTML is optionally saved. _kokoi_ is the perfect tool for those who like to keep notes in markup&#8209;formatted files and who are always editing them.
 
 You can also pass, as arguments, multiple markup files, or directories, which will be scanned recursively.
 
@@ -12,12 +12,15 @@ Additional features are, configurable command to process markup files, support f
 
 * Install [Node.js](http://www.nodejs.org/).
 
-* Install a markup processing engine such as [Pandoc](http://johnmacfarlane.net/pandoc/). By default _kokoi_ is configured to watch for changes on Markdown files, and uses _pandoc_ to convert them, if _pandoc_ is not installed _kokoi_ will try to use the fallback command `markdown`. If you want to use a different engine, the appropriate command to convert markup files to HTML must be specified (see Usage).
+* Install a markup processing engine such as [Pandoc](http://johnmacfarlane.net/pandoc/). By default _kokoi_ is configured to watch for changes on Markdown files, and uses Pandoc to convert them, if Pandoc is not installed _kokoi_ will try to use the fallback command `markdown`. If you want to use a different engine, the appropriate command to convert markup files to HTML must be specified (see Usage).
 
 * Then, run `npm install kokoi -g` in a terminal.
 
-__On Linux__, make sure that also _npm_ is installed, and note that the preceding command must be run as root.
-Moreover, if you installed Node.js from a package manager, the Node.js binary may be called _nodejs_ instead of _node_, run this command as root `ln -s /usr/bin/nodejs /usr/bin/node` to create a symlink.
+Notes for __Linux__ users:
+
+* To install _kokoi_ globally, note that the preceding command must be run as root, also, make sure that _npm_ is installed.
+
+* If you installed Node.js from a package manager, the Node.js binary may be called _nodejs_ instead of _node_, run this command as root `ln -s /usr/bin/nodejs /usr/bin/node` to create a symlink.
 
 ## Usage
 
@@ -96,6 +99,10 @@ A template must contain the following special variables used by _kokoi_: `$title
   </body>
 </html>
 ```
+
+## Contributing
+
+If you see possible improvements, feel free to fork and contribute!
 
 ## License
 
