@@ -1,6 +1,6 @@
 {
   "name": "kokoi",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Configurable markup file watcher, previewer and converter.",
   "bin": {
     "kokoi": "./bin/kokoi.js"
